@@ -414,10 +414,9 @@ var FormFunctions = {
         this.ShowHideOtherArmor();
 
         // Hit Dice
-        $("#hitdice-input").val(mon.hitDice);
+        // $("#hitdice-input").val(mon.hitDice);
         $("#hp-text-input").val(StringFunctions.GetHP());
-        $("#custom-hp-input").prop("checked", mon.customHP);
-        this.ShowHideCustomHP();
+        // this.ShowHideCustomHP();
 
         // Speeds
         $("#speed-input").val(mon.speed);
@@ -484,13 +483,13 @@ var FormFunctions = {
         this.ShowHideHtmlElement("#other-type-input", $("#type-input").val() == "*");
     },
 
-    ShowHideCustomHP: function() {
-        $("#hitdice-input-prompt, #hp-text-input-prompt").hide();
-        if ($("#custom-hp-input").prop('checked'))
-            $("#hp-text-input-prompt").show();
-        else
-            $("#hitdice-input-prompt").show();
-    },
+    // ShowHideCustomHP: function() {
+    //     $("#hitdice-input-prompt, #hp-text-input-prompt").hide();
+    //     if ($("#custom-hp-input").prop('checked'))
+    //         $("#hp-text-input-prompt").show();
+    //     else
+    //         $("#hitdice-input-prompt").show();
+    // },
     ShowHideOtherArmor: function() {
         $("#natarmor-prompt, #otherarmor-prompt").hide();
         if ($("#armor-input").val() == "natural armor")
@@ -770,9 +769,9 @@ var GetVariablesFunctions = {
         mon.otherArmorDesc = $("#otherarmor-input").val();
 
         // Hit Points
-        mon.hitDice = $("#hitdice-input").val();
+        // mon.hitDice = $("#hitdice-input").val();
         mon.hpText = $("#hp-text-input").val();
-        mon.customHP = $("#custom-hp-input").prop("checked");
+        // mon.customHP = $("#custom-hp-input").prop("checked");
 
         // Speeds
         mon.speed = $("#speed-input").val();
@@ -897,9 +896,10 @@ var GetVariablesFunctions = {
             mon.otherArmorDesc = armorAcData + (preset.armor_desc ? " (" + preset.armor_desc + ")" : "");
 
         // Hit Dice
-        mon.hitDice = parseInt(preset.hit_dice.split("d")[0]);
-        mon.hpText = mon.hitDice.toString();
-        mon.customHP = false;
+        // mon.hitDice = parseInt(preset.hit_dice.split("d")[0]);
+        // mon.hpText = mon.hitDice.toString();
+        // mon.customHP = false;
+        mon.hpText = preset.hit_dice;
 
         // Speeds
         let GetSpeed = (speedList, speedType) => speedList.hasOwnProperty(speedType) ? parseInt(speedList[speedType]) : 0;
@@ -1242,16 +1242,16 @@ var StringFunctions = {
 
     // Get the string displayed for the monster's HP
     GetHP: function() {
-        if (mon.customHP)
+        // if (mon.customHP)
             return mon.hpText;
-        let conBonus = MathFunctions.PointsToBonus(mon.conPoints);
-        hitDieSize = data.sizes[mon.size].hitDie,
-            avgHP = Math.floor(mon.hitDice * ((hitDieSize + 1) / 2)) + (mon.hitDice * conBonus);
-        if (conBonus > 0)
-            return avgHP + " (" + mon.hitDice + "d" + hitDieSize + " + " + (mon.hitDice * conBonus) + ")";
-        if (conBonus == 0)
-            return avgHP + " (" + mon.hitDice + "d" + hitDieSize + ")";
-        return Math.max(avgHP, 1) + " (" + mon.hitDice + "d" + hitDieSize + " - " + -(mon.hitDice * conBonus) + ")";
+        // let conBonus = MathFunctions.PointsToBonus(mon.conPoints);
+        // hitDieSize = data.sizes[mon.size].hitDie,
+        //     avgHP = Math.floor(mon.hitDice * ((hitDieSize + 1) / 2)) + (mon.hitDice * conBonus);
+        // if (conBonus > 0)
+        //     return avgHP + " (" + mon.hitDice + "d" + hitDieSize + " + " + (mon.hitDice * conBonus) + ")";
+        // if (conBonus == 0)
+        //     return avgHP + " (" + mon.hitDice + "d" + hitDieSize + ")";
+        // return Math.max(avgHP, 1) + " (" + mon.hitDice + "d" + hitDieSize + " - " + -(mon.hitDice * conBonus) + ")";
     },
 
     GetSpeed: function() {

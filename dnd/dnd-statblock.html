@@ -161,19 +161,30 @@
 
 
 
+
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-4 basic-info">
 
                                         <div class="row">
-                                            <label for="name-input" class="col-sm-5 col-form-label pb-1 pt-1">Name:</label>
-                                            <div class="col-sm-7">
+                                            <div class="col-12">
+                                                <h6>Basic Info</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="name-input" class="input-group-text attribute-label">Name</span>
+                                                </div>
                                                 <input id="name-input" type="text" value="Monster" class="form-control form-control-sm">
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <label for="size-input" class="col-sm-5 col-form-label pb-1 pt-1">Size:</label>
-                                            <div class="col-sm-7">
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="size-input" class="input-group-text attribute-label">Size</span>
+                                                </div>
                                                 <select id="size-input" class="form-control form-control-sm">
                                                     <option value="tiny">Tiny</option>
                                                     <option value="small">Small</option>
@@ -185,9 +196,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <label for="type-input" class="col-sm-5 col-form-label pb-1 pt-1">Type:</label>
-                                            <div class="col-sm-7">
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="type-input" class="input-group-text attribute-label">Type</span>
+                                                </div>
                                                 <select id="type-input" class="form-control form-control-sm">
                                                     <option value="aberration">Aberration</option>
                                                     <option value="beast">Beast</option>
@@ -208,9 +221,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="row">
-                                            <label for="alignment-input" class="col-sm-5 col-form-label pb-1 pt-1">Alignment:</label>
-                                            <div class="col-sm-7">
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="alignment-input" class="input-group-text attribute-label">Alignment</span>
+                                                </div>
                                                 <select id="alignment-input" class="form-control form-control-sm">
                                                     <option value="any" selected>Any</option>
                                                     <option value="any Good" select>Any Good</option>
@@ -231,265 +246,321 @@
                                             </div>
                                         </div>
 
+                                    </div>
+
+                                    <div class="col-3 movement-speeds">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Movement</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="speed-input" class="input-group-text attribute-label">Base</span>
+                                                </div>
+                                                <input type="number" id="speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="burrow-speed-input" class="input-group-text attribute-label">Burrow</span>
+                                                </div>
+                                                <input type="number" id="burrow-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="climb-speed-input" class="input-group-text attribute-label">Climb</span>
+                                                </div>
+                                                <input type="number" id="climb-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="fly-speed-input" class="input-group-text attribute-label">Fly</span>
+                                                </div>
+                                                <input type="number" id="fly-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="swim-speed-input" class="input-group-text attribute-label">Swim</span>
+                                                </div>
+                                                <input type="number" id="swim-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="col-5 armor-and-hitpoints">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Hit Points</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="hp-text-input" class="input-group-text attribute-label">Hit Points</</span>
+                                                </div>
+                                                <input type="text" id="hp-text-input" class="form-control form-control-sm" value="4 (1d8)">
+                                            </div>
+                                        </div>
+
+                                        <div class="row pb-1 pr-3 pl-3">
+
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="armor-input" class="input-group-text attribute-label">Armor</</span>
+                                                </div>
+
+                                                <select id="armor-input" class="form-control form-control-sm" onchange="FormFunctions.ShowHideOtherArmor();">
+                                                    <option value="none" selected>None</option>
+                                                    <option value="natural armor">Natural Armor</option>
+                                                    <option value="mage armor">Mage Armor</option>
+                                                    <option value="padded armor">Padded</option>
+                                                    <option value="leather armor">Leather</option>
+                                                    <option value="studded leather">Studded Leather</option>
+                                                    <option value="hide armor">Hide</option>
+                                                    <option value="chain shirt">Chain Shirt</option>
+                                                    <option value="scale mail">Scale Mail</option>
+                                                    <option value="breastplate">Breastplate</option>
+                                                    <option value="half plate">Half Plate</option>
+                                                    <option value="ring mail">Ring Mail</option>
+                                                    <option value="chain mail">Chain Mail</option>
+                                                    <option value="splint">Splint</option>
+                                                    <option value="plate">Plate</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text box-note">
+                                                        (Shield: <input id="shield-input" type="checkbox">)
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div id="natarmor-prompt" class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="natarmor-input" class="input-group-text attribute-label">Natural Armor</</span>
+                                                </div>
+                                                <input type="number" id="natarmor-input" min="1" max="99" value="3" class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+
+                                        <div id="otherarmor-prompt" class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="otherarmor-input" class="input-group-text attribute-label">Description</</span>
+                                                </div>
+                                                <input type="text" id="otherarmor-input" class="form-control form-control-sm" value="10 (armor)">
+                                                <div class="input-group-append">
+                                                    <span id="otherarmor-box-note" class="input-group-text box-note">
+                                                        <i>Use _ to italicize</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
+
+
                                 </div>
 
 
 
-
-                        <div class="row">
-                            <div class="col-2 movement-speeds">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <h6>Movement</h6>
+                                    <div class="col-3 ability-scores">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Ability Scores</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="str-input" class="input-group-text attribute-label">STR</span>
+                                                </div>
+                                                <input type="number" id="str-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
+                                                <div class="input-group-append">
+                                                    <span id="strbonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="dex-input" class="input-group-text attribute-label">DEX</span>
+                                                </div>
+                                                <input type="number" id="dex-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('dex')">
+                                                <div class="input-group-append">
+                                                    <span id="dexbonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="con-input" class="input-group-text attribute-label">CON</span>
+                                                </div>
+                                                <input type="number" id="con-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('con')">
+                                                <div class="input-group-append">
+                                                    <span id="conbonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="int-input" class="input-group-text attribute-label">INT</</span>
+                                                </div>
+                                                <input type="number" id="int-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('int')">
+                                                <div class="input-group-append">
+                                                    <span id="intbonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="wis-input" class="input-group-text attribute-label">WIS</</span>
+                                                </div>
+                                                <input type="number" id="wis-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('wis')">
+                                                <div class="input-group-append">
+                                                    <span id="wisbonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="cha-input" class="input-group-text attribute-label">CHA</</span>
+                                                </div>
+                                                <input type="number" id="cha-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('cha')">
+                                                <div class="input-group-append">
+                                                    <span id="chabonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-3 saving-throws">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Saving Throws</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="sthrows-input" class="input-group-text attribute-label">Save</</span>
+                                                </div>
+                                                <select id="sthrows-input" class="form-control form-control-sm">
+                                                    <option value="str">Strength</option>
+                                                    <option value="dex">Dexterity</option>
+                                                    <option value="con">Constitution</option>
+                                                    <option value="int">Intelligence</option>
+                                                    <option value="wis">Wisdom</option>
+                                                    <option value="cha">Charisma</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddSthrowInput()">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div id="sthrows-input-section">
+                                                <ul id="sthrows-input-list" class="statblock-list"></ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="speed-input" class="input-group-text attribute-label">Base</span>
-                                        </div>
-                                        <input type="number" id="speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">ft.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="burrow-speed-input" class="input-group-text attribute-label">Burrow</span>
-                                        </div>
-                                        <input type="number" id="burrow-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">ft.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="climb-speed-input" class="input-group-text attribute-label">Climb</span>
-                                        </div>
-                                        <input type="number" id="climb-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">ft.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="fly-speed-input" class="input-group-text attribute-label">Fly</span>
-                                        </div>
-                                        <input type="number" id="fly-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">ft.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="swim-speed-input" class="input-group-text attribute-label">Swim</span>
-                                        </div>
-                                        <input type="number" id="swim-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">ft.</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
 
-
-                        <div class="row">
-                            <div class="col-2 ability-scores">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <h6>Ability Scores</h6>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="str-input" class="input-group-text attribute-label">STR</span>
+                                    <div class="col-3 skills">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Skills</h6>
+                                            </div>
                                         </div>
-                                        <input type="number" id="str-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
-                                        <div class="input-group-append">
-                                            <span id="strbonus" class="input-group-text ability-modifier">0</span>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="skills-input" class="input-group-text attribute-label">Skill</</span>
+                                                </div>
+                                                <select id="skills-input" class="form-control form-control-sm">
+                                                    <option value="acrobatics">Acrobatics</option>
+                                                    <option value="animal Handling">Animal Handling</option>
+                                                    <option value="arcana">Arcana</option>
+                                                    <option value="athletics">Athletics</option>
+                                                    <option value="deception">Deception</option>
+                                                    <option value="history">History</option>
+                                                    <option value="insight">Insight</option>
+                                                    <option value="intimidation">Intimidation</option>
+                                                    <option value="investigation">Investigation</option>
+                                                    <option value="medicine">Medicine</option>
+                                                    <option value="nature">Nature</option>
+                                                    <option value="perception">Perception</option>
+                                                    <option value="performance">Performance</option>
+                                                    <option value="persuasion">Persuasion</option>
+                                                    <option value="religion">Religion</option>
+                                                    <option value="sleight of Hand">Sleight of Hand</option>
+                                                    <option value="stealth">Stealth</option>
+                                                    <option value="survival">Survival</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddSkillInput()">+</button>
+                                                    <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddSkillInput(' (ex)')">x2</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="dex-input" class="input-group-text attribute-label">DEX</span>
-                                        </div>
-                                        <input type="number" id="dex-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('dex')">
-                                        <div class="input-group-append">
-                                            <span id="dexbonus" class="input-group-text ability-modifier">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="con-input" class="input-group-text attribute-label">CON</span>
-                                        </div>
-                                        <input type="number" id="con-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('con')">
-                                        <div class="input-group-append">
-                                            <span id="conbonus" class="input-group-text ability-modifier">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="int-input" class="input-group-text attribute-label">INT</</span>
-                                        </div>
-                                        <input type="number" id="int-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('int')">
-                                        <div class="input-group-append">
-                                            <span id="intbonus" class="input-group-text ability-modifier">0</span>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div id="skills-input-section">
+                                                <ul id="skills-input-list" class="statblock-list"></ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="wis-input" class="input-group-text attribute-label">WIS</</span>
-                                        </div>
-                                        <input type="number" id="wis-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('wis')">
-                                        <div class="input-group-append">
-                                            <span id="wisbonus" class="input-group-text ability-modifier">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row pb-1">
-                                    <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
-                                            <span for="cha-input" class="input-group-text attribute-label">CHA</</span>
-                                        </div>
-                                        <input type="number" id="cha-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('cha')">
-                                        <div class="input-group-append">
-                                            <span id="chabonus" class="input-group-text ability-modifier">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
 
 
 
-
-                        <div class="row pb-1">
-                            <div class="input-group input-group-sm">
-                                <div class="input-group-prepend">
-                                    <span for="armor-input" class="input-group-text attribute-label">Armor</</span>
-                                </div>
-
-                                <select id="armor-input" class="form-control form-control-sm">
-                                    <option value="none" selected>None</option>
-                                    <option value="natural armor">Natural Armor</option>
-                                    <option value="mage armor">Mage Armor</option>
-                                    <option value="padded armor">Padded</option>
-                                    <option value="leather armor">Leather</option>
-                                    <option value="studded leather">Studded Leather</option>
-                                    <option value="hide armor">Hide</option>
-                                    <option value="chain shirt">Chain Shirt</option>
-                                    <option value="scale mail">Scale Mail</option>
-                                    <option value="breastplate">Breastplate</option>
-                                    <option value="half plate">Half Plate</option>
-                                    <option value="ring mail">Ring Mail</option>
-                                    <option value="chain mail">Chain Mail</option>
-                                    <option value="splint">Splint</option>
-                                    <option value="plate">Plate</option>
-                                    <option value="other">Other</option>
-                                </select>
-
-                                <div class="input-group-append">
-                                    <!-- <div id="shield-box-note" class="box-note"> -->
-                                    <label>(Shield: <input id="shield-input" type="checkbox">)</label>
-                                    <!-- </div> -->
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <table id="armor-hitdice-form">
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <div id="hitdice-input-prompt"><label for="hitdice-input">Hit Dice: <br><input type="number" id="hitdice-input" min="1" max="99" value="5"></label></div>
-                                    <div id="hp-text-input-prompt"><label for="hp-text-input">Hit Points:<br><input id="hp-text-input" value="4 (1d8)"></label></div>
-                                    <div id="custom-hp-box-prompt" class="box-note"><label for="custom-hp-input">(Custom HP: <input id="custom-hp-input" type="checkbox" onchange="FormFunctions.ShowHideCustomHP()">)</label></div>
-                                </td>
-                                <td colspan="2">
-                                    <div id="natarmor-prompt"><label for="natarmor-input">Natural Armor Bonus:<br><input type="number" id="natarmor-input" min="1" max="99" value="3"></label></div>
-                                    <div id="otherarmor-prompt">
-                                        <label for="otherarmor-input">Description: <input id="otherarmor-input" type="text" value="10 (armor)"></label><br>
-                                        <div id="otherarmor-box-note" class="box-note"><i>Use _ to italicize</i></div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
 
 
 
 
 
                         <table id="properties-lists-form">
-                            <tr>
-                                <td id="sthrows-form">
-                                    <label for="sthrows-input">Saving Throws:</label><br>
-                                    <select id="sthrows-input">
-                                        <option value="str">Strength</option>
-                                        <option value="dex">Dexterity</option>
-                                        <option value="con">Constitution</option>
-                                        <option value="int">Intelligence</option>
-                                        <option value="wis">Wisdom</option>
-                                        <option value="cha">Charisma</option>
-                                    </select>
-                                    <button type="button" onclick="InputFunctions.AddSthrowInput()">Proficient</button>
-                                    <div id="sthrows-input-section">
-                                        <ul id="sthrows-input-list" class="statblock-list"></ul>
-                                    </div>
-                                </td>
-                                <td id="skills-form">
-                                    <label for="skills-input">Skills:</label><br>
-                                    <select id="skills-input">
-                                        <option value="acrobatics">Acrobatics</option>
-                                        <option value="animal Handling">Animal Handling</option>
-                                        <option value="arcana">Arcana</option>
-                                        <option value="athletics">Athletics</option>
-                                        <option value="deception">Deception</option>
-                                        <option value="history">History</option>
-                                        <option value="insight">Insight</option>
-                                        <option value="intimidation">Intimidation</option>
-                                        <option value="investigation">Investigation</option>
-                                        <option value="medicine">Medicine</option>
-                                        <option value="nature">Nature</option>
-                                        <option value="perception">Perception</option>
-                                        <option value="performance">Performance</option>
-                                        <option value="persuasion">Persuasion</option>
-                                        <option value="religion">Religion</option>
-                                        <option value="sleight of Hand">Sleight of Hand</option>
-                                        <option value="stealth">Stealth</option>
-                                        <option value="survival">Survival</option>
-                                    </select>
-                                    <button type="button" onclick="InputFunctions.AddSkillInput()">Proficient</button>
-                                    <button type="button" onclick="InputFunctions.AddSkillInput(' (ex)')">Expert</button>
-                                    <div id="skills-input-section">
-                                        <ul id="skills-input-list" class="statblock-list"></ul>
-                                    </div>
-                                </td>
+
                                 <td id="conditions-form">
                                     <label for="conditions-input">Condition Immunities: </label><br>
                                     <select id="conditions-input">

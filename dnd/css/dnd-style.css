@@ -39,6 +39,10 @@ body {
 }
 
 
+.basic-info .attribute-label {
+	min-width: 81px !important;
+}
+
 
 
 /*h1,
