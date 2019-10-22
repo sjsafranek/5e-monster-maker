@@ -771,42 +771,44 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-7">
-                                    <div class="row pb-1 pr-3 pl-3">
-                                        <select id="common-ability-input" class="form-control form-control-sm" onchange="InputFunctions.AddCommonAbilityInput()"></select>
-                                    </div>
-                                    <div class="row pb-1 pr-3 pl-3">
-                                        <div class="input-group input-group-sm">
-                                            <div class="input-group-prepend">
-                                                <span for="abilities-name-input" class="input-group-text attribute-label">Ability Name</</span>
+                                <div class="col-9">
+                                    <div class="row pb-1">
+                                        <div class="col-4">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="abilities-name-input" class="input-group-text attribute-label">Name</</span>
+                                                </div>
+                                                <input type="text" id="abilities-name-input" class="form-control form-control-sm" value="">
                                             </div>
-                                            <input type="text" id="abilities-name-input" class="form-control form-control-sm" value="">
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="ability-type" class="input-group-text attribute-label">Type</</span>
+                                                </div>
+                                                <select id="ability-type" class="form-control form-control-sm">
+                                                    <option value="abilities">Ability</option>
+                                                    <option value="actions">Action</option>
+                                                    <option value="reactions">Reaction</option>
+                                                    <option value="legendaries">Legendary Action</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-sm btn-success" id="createAbility">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <select id="common-ability-input" class="form-control form-control-sm" onchange="InputFunctions.AddCommonAbilityInput()"></select>
                                         </div>
                                     </div>
                                     <div class="row pb-1 pr-3 pl-3">
                                         <div class="input-group input-group-sm">
-                                            <textarea type="text" id="abilities-desc-input" class="form-control form-control-sm" value="" style="height: 10em;"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="row pb-1 pr-3 pl-3">
-                                        <div class="input-group input-group-sm">
-                                            <div class="input-group-prepend">
-                                                <span for="ability-type" class="input-group-text attribute-label">Type</</span>
-                                            </div>
-                                            <select id="ability-type" class="form-control form-control-sm">
-                                                <option value="abilities">Ability</option>
-                                                <option value="actions">Action</option>
-                                                <option value="reactions">Reaction</option>
-                                                <option value="legendaries">Legendary Action</option>
-                                            </select>
-                                            <div class="input-group-append">
-                                                <button class="btn btn-sm btn-success" id="createAbility">+</button>
-                                            </div>
+                                            <textarea type="text" id="abilities-desc-input" class="form-control form-control-sm" value="" style="height: 12em;"></textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-5">
-                                    <div class="row pb-1 pr-3 pl-3" style="text-align: left; padding: 0 2rem; font-size: 12px;">
+                                <div class="col-3">
+                                    <div class="row pb-1 pr-3 pl-3" style="text-align: left; padding: 0 2rem; font-size: 10px;">
                                         <div>Use _ to italicize and ** to bold. For Spellcasting lists, use > to reverse-indent.</div>
                                         <div><b>[MON]</b>: Shows the monster's name.</div>
                                         <div><b>[CHA]</b>: Shows the monster's charisma modifier.</div>
@@ -819,7 +821,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div style="text-align: left; min-height: 5rem;">
+                                <div class="pt-2 pl-4 pr-4 abilities-container" style="text-align: left; min-height: 5rem;">
                                     <div id="abilities-input-section"><b>Abilities:</b><br>
                                         <ul id="abilities-input-list" class="statblock-list"></ul>
                                     </div>
