@@ -157,7 +157,7 @@
 
             <div class="row mt-4">
                 <div class="col-12">
-                    <div class="options">
+                    <!-- <div class="options"> -->
 
 
                         <div class="row">
@@ -238,6 +238,7 @@
                                                     <option value="chaotic evil">Chaotic Evil</option>
                                                     <option value="any lawful" selected>Any Lawful</option>
                                                     <option value="any chaotic" selected>Any Chaotic</option>
+                                                    <option value="unaligned" selected>Unaligned</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -758,7 +759,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </div>
             <div class="row">
@@ -808,7 +809,7 @@
                                     </div>
                                 </div>
                                 <div class="col-3">
-                                    <div class="row pb-1 pr-3 pl-3" style="text-align: left; padding: 0 2rem; font-size: 10px;">
+                                    <div class="row pb-1 pr-3 pl-3 text-muted" style="text-align: left; padding: 0 2rem; font-size: 10px;">
                                         <div>Use _ to italicize and ** to bold. For Spellcasting lists, use > to reverse-indent.</div>
                                         <div><b>[MON]</b>: Shows the monster's name.</div>
                                         <div><b>[CHA]</b>: Shows the monster's charisma modifier.</div>
@@ -821,18 +822,37 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="pt-2 pl-4 pr-4 abilities-container" style="text-align: left; min-height: 5rem;">
-                                    <div id="abilities-input-section"><b>Abilities:</b><br>
-                                        <ul id="abilities-input-list" class="statblock-list"></ul>
+                                <div class="col-9">
+                                    <div class="row pt-2 pl-4 pr-4 abilities-container" style="text-align: left; min-height: 5rem;">
+                                        <div id="abilities-input-section"><b>Abilities:</b><br>
+                                            <ul id="abilities-input-list" class="statblock-list"></ul>
+                                        </div>
+                                        <div id="actions-input-section"><b>Actions:</b><br>
+                                            <ul id="actions-input-list" class="statblock-list"></ul>
+                                        </div>
+                                        <div id="reactions-input-section"><b>Reactions:</b><br>
+                                            <ul id="reactions-input-list" class="statblock-list"></ul>
+                                        </div>
+                                        <div id="legendaries-input-section"><b>Legendary Actions:</b><br>
+                                            <ul id="legendaries-input-list" class="statblock-list"></ul>
+                                        </div>
                                     </div>
-                                    <div id="actions-input-section"><b>Actions:</b><br>
-                                        <ul id="actions-input-list" class="statblock-list"></ul>
-                                    </div>
-                                    <div id="reactions-input-section"><b>Reactions:</b><br>
-                                        <ul id="reactions-input-list" class="statblock-list"></ul>
-                                    </div>
-                                    <div id="legendaries-input-section"><b>Legendary Actions:</b><br>
-                                        <ul id="legendaries-input-list" class="statblock-list"></ul>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row pt-2 pl-4 pr-4 abilities-container" style="text-align: left; min-height: 5rem;">
+                                        <div>
+                                            <label for="is-legendary-input"><b>Legendary Creature:</b> <input type="checkbox" id="is-legendary-input" onclick="FormFunctions.ShowHideLegendaryCreature()"></label>
+                                        </div>
+                                        <div id="legendary-actions-form">
+                                            <b>Legendary Actions Description:</b>
+                                            <div id="legendaries-descsection" rows="4"></div>
+                                            <!-- <div>
+                                                <textarea id="legendaries-descsection-input" class="form-control form-control-sm" rows="4"></textarea>
+                                            </div>
+                                            <div class="pt-1">
+                                                <button type="button" class="btn btn-sm btn-warning" onclick="InputFunctions.LegendaryDescriptionDefaultInput()">Reset</button>
+                                            </div> -->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -841,17 +861,7 @@
                 </div>
 
 
-                <!-- <hr>
-                <div>
-                    <label for="is-legendary-input"><b>Legendary Creature:</b> <input type="checkbox" id="is-legendary-input" onclick="FormFunctions.ShowHideLegendaryCreature()"></label>
-                </div>
-                <div id="legendary-actions-form">
-                    <br>
-                    <b>Legendary Actions Description:</b>
-                    <div><label for="legendaries-descsection-input" style="width: 100%"><textarea id="legendaries-descsection-input" rows="4"></textarea></label></div>
-                    <div><button type="button" onclick="InputFunctions.LegendaryDescriptionDefaultInput()">Reset to Default</button></div>
-                </div>
-                <br> -->
+
 
 
             </div>
@@ -860,9 +870,9 @@
     </div>
 
     <script>
-        $('.options input').on('change', UpdateBlockFromVariables);
-        $('.options button').on('change', UpdateBlockFromVariables);
-        $('.options select').on('change', UpdateBlockFromVariables);
+        $('.content input').on('change', UpdateBlockFromVariables);
+        $('.content button').on('change', UpdateBlockFromVariables);
+        $('.content select').on('change', UpdateBlockFromVariables);
 
         $('#createAbility').on('click', function(e){
             InputFunctions.AddAbilityInput(

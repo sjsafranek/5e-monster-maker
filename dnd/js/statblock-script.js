@@ -560,7 +560,9 @@ var FormFunctions = {
 
     // For setting the legendary action description
     SetLegendaryDescriptionForm: function() {
-        $("#legendaries-descsection-input").val(mon.legendariesDescription);
+        // $("#legendaries-descsection-input").val(mon.legendariesDescription);
+        GetVariablesFunctions.LegendaryDescriptionDefault();
+        $('#legendaries-descsection').empty().append(mon.legendariesDescription);
     },
 
     SetCommonAbilitiesDropdown: function() {
@@ -813,8 +815,14 @@ var GetVariablesFunctions = {
 
         // Legendaries
         mon.isLegendary = $("#is-legendary-input").prop("checked");
-        if (mon.isLegendary)
-            mon.legendariesDescription = $("#legendaries-descsection-input").val().trim();
+        if (mon.isLegendary) {
+            // mon.legendariesDescription = $("#legendaries-descsection-input").val().trim();
+            GetVariablesFunctions.LegendaryDescriptionDefault();
+            FormFunctions.SetLegendaryDescriptionForm();
+        }
+        else {
+            mon.legendariesDescription = null;
+        }
 
         // One or two columns ?
         mon.doubleColumns = $("#2col-input").prop("checked");
@@ -1020,8 +1028,8 @@ var GetVariablesFunctions = {
         mon.isLegendary = Array.isArray(preset.legendary_actions);
         if (preset.legendary_desc == null || preset.legendary_desc.length == 0)
             this.LegendaryDescriptionDefault();
-        else
-            mon.legendariesDescription = preset.legendary_desc;
+        // else
+            // mon.legendariesDescription = preset.legendary_desc;
         FormFunctions.SetLegendaryDescriptionForm();
 
         // Abilities
