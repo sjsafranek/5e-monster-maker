@@ -5,7 +5,7 @@ var mon = {
     size: "medium",
     type: "humanoid",
     tag: "",
-    alignment: "any alignment",
+    alignment: "any",
     hitDice: 5,
     armorName: "none",
     shieldBonus: 0,

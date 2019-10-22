@@ -611,7 +611,7 @@
 		"type": "humanoid",
 		"subtype": "",
 		"group": null,
-		"alignment": "any alignment",
+		"alignment": "any",
 		"armor_class": 10,
 		"armor_desc": null,
 		"hit_points": 22,

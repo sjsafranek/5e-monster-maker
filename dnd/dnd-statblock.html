@@ -59,9 +59,6 @@
                         <option value="default">Restore Default</option>
                     </select>
                 </div>
-                <!-- <div class="col-auto">
-                    <button class="btn btn-sm btn-success" onclick="InputFunctions.GetPreset()">Use Preset</button>
-                </div> -->
             </div>
 
             <!-- The Actual Stat Block -->
@@ -162,213 +159,241 @@
                 <div class="col-12">
                     <div class="options">
 
+
+
+                                <div class="row">
+                                    <div class="col-4">
+
+                                        <div class="row">
+                                            <label for="name-input" class="col-sm-5 col-form-label pb-1 pt-1">Name:</label>
+                                            <div class="col-sm-7">
+                                                <input id="name-input" type="text" value="Monster" class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <label for="size-input" class="col-sm-5 col-form-label pb-1 pt-1">Size:</label>
+                                            <div class="col-sm-7">
+                                                <select id="size-input" class="form-control form-control-sm">
+                                                    <option value="tiny">Tiny</option>
+                                                    <option value="small">Small</option>
+                                                    <option value="medium" selected="selected">Medium</option>
+                                                    <option value="large">Large</option>
+                                                    <option value="huge">Huge</option>
+                                                    <option value="gargantuan">Gargantuan</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <label for="type-input" class="col-sm-5 col-form-label pb-1 pt-1">Type:</label>
+                                            <div class="col-sm-7">
+                                                <select id="type-input" class="form-control form-control-sm">
+                                                    <option value="aberration">Aberration</option>
+                                                    <option value="beast">Beast</option>
+                                                    <option value="celestial">Celestial</option>
+                                                    <option value="construct">Construct</option>
+                                                    <option value="dragon">Dragon</option>
+                                                    <option value="elemental">Elemental</option>
+                                                    <option value="fey">Fey</option>
+                                                    <option value="fiend">Fiend</option>
+                                                    <option value="giant">Giant</option>
+                                                    <option value="humanoid" selected>Humanoid</option>
+                                                    <option value="monstrosity">Monstrosity</option>
+                                                    <option value="ooze">Ooze</option>
+                                                    <option value="plant">Plant</option>
+                                                    <option value="undead">Undead</option>
+                                                    <option value="*">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <label for="alignment-input" class="col-sm-5 col-form-label pb-1 pt-1">Alignment:</label>
+                                            <div class="col-sm-7">
+                                                <select id="alignment-input" class="form-control form-control-sm">
+                                                    <option value="any" selected>Any</option>
+                                                    <option value="any Good" select>Any Good</option>
+                                                    <option value="lawful good">Lawful Good</option>
+                                                    <option value="good">Good</option>
+                                                    <option value="chaotic good">Chaotic Good</option>
+                                                    <option value="any neutral" selected>Any Neutral</option>
+                                                    <option value="lawful neutral">Lawful Neutral</option>
+                                                    <option value="neutral">Neutral</option>
+                                                    <option value="chaotic neutral">Chaotic Neutral</option>
+                                                    <option value="any evil" selected>Any Evil</option>
+                                                    <option value="lawful evil">Lawful Evil</option>
+                                                    <option value="evil">Evil</option>
+                                                    <option value="chaotic evil">Chaotic Evil</option>
+                                                    <option value="any lawful" selected>Any Lawful</option>
+                                                    <option value="any chaotic" selected>Any Chaotic</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+
                         <div class="row">
-                            <div class="col-6">
-
-                                <div class="row">
-                                    <label for="name-input" class="col-sm-3 col-form-label">Name:</label>
-                                    <div class="col-sm-9">
-                                        <input id="name-input" type="text" value="Monster" class="form-control form-control-sm">
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <label for="size-input" class="col-sm-3 col-form-label">Size:</label>
-                                    <div class="col-sm-9">
-                                        <select id="size-input" class="form-control form-control-sm">
-                                            <option value="tiny">Tiny</option>
-                                            <option value="small">Small</option>
-                                            <option value="medium" selected="selected">Medium</option>
-                                            <option value="large">Large</option>
-                                            <option value="huge">Huge</option>
-                                            <option value="gargantuan">Gargantuan</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <label for="type-input" class="col-sm-3 col-form-label">Type:</label>
-                                    <div class="col-sm-9">
-                                        <select id="type-input" class="form-control form-control-sm" onchange="FormFunctions.ShowHideTypeOther()">
-                                            <option value="aberration">Aberration</option>
-                                            <option value="beast">Beast</option>
-                                            <option value="celestial">Celestial</option>
-                                            <option value="construct">Construct</option>
-                                            <option value="dragon">Dragon</option>
-                                            <option value="elemental">Elemental</option>
-                                            <option value="fey">Fey</option>
-                                            <option value="fiend">Fiend</option>
-                                            <option value="giant">Giant</option>
-                                            <option value="humanoid" selected>Humanoid</option>
-                                            <option value="monstrosity">Monstrosity</option>
-                                            <option value="ooze">Ooze</option>
-                                            <option value="plant">Plant</option>
-                                            <option value="undead">Undead</option>
-                                            <option value="*">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <label for="alignment-input" class="col-sm-3 col-form-label">Alignment:</label>
-                                    <div class="col-sm-9">
-                                        <select id="alignment-input" class="form-control form-control-sm">
-                                            <option value="Any" selected>Any</option>
-                                            <option value="Any Good" select>Any Good</option>
-                                            <option value="Lawful Good">Lawful Good</option>
-                                            <option value="Good">Good</option>
-                                            <option value="Chaotic Good">Chaotic Good</option>
-                                            <option value="Any Neutral" selected>Any Neutral</option>
-                                            <option value="Lawful Neutral">Lawful Neutral</option>
-                                            <option value="Neutral">Neutral</option>
-                                            <option value="Chaotic Neutral">Chaotic Neutral</option>
-                                            <option value="Any Evil" selected>Any Evil</option>
-                                            <option value="Lawful Evil">Lawful Evil</option>
-                                            <option value="Evil">Evil</option>
-                                            <option value="Chaotic Evil">Chaotic Evil</option>
-                                            <option value="Any Lawful" selected>Any Lawful</option>
-                                            <option value="Any Chaotic" selected>Any Chaotic</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="col-6">
+                            <div class="col-2 movement-speeds">
                                 <div class="row">
                                     <div class="col-12">
-                                        <label>Movement</label>
+                                        <h6>Movement</h6>
                                     </div>
                                 </div>
-                                <!-- Speed -->
-                                <div class="row">
-                                    <label for="speed-input" class="col-sm-6 col-form-label">Speed:</label>
-                                    <div class="col-sm-6">
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="speed-input" class="input-group-text attribute-label">Base</span>
+                                        </div>
                                         <input type="number" id="speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">ft.</span>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <!-- Burrow Speed -->
-                                <div class="row">
-                                    <label for="burrow-speed-input" class="col-sm-6 col-form-label">Burrow Speed:</label>
-                                    <div class="col-sm-6">
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="burrow-speed-input" class="input-group-text attribute-label">Burrow</span>
+                                        </div>
                                         <input type="number" id="burrow-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">ft.</span>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <!-- Burrow Speed -->
-                                <div class="row">
-                                    <label for="climb-speed-input" class="col-sm-6 col-form-label">Climb Speed:</label>
-                                    <div class="col-sm-6">
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="climb-speed-input" class="input-group-text attribute-label">Climb</span>
+                                        </div>
                                         <input type="number" id="climb-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">ft.</span>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <!-- Fly Speed -->
-                                <div class="row">
-                                    <label for="fly-speed-input" class="col-sm-6 col-form-label">Fly Speed:</label>
-                                    <div class="col-sm-6">
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="fly-speed-input" class="input-group-text attribute-label">Fly</span>
+                                        </div>
                                         <input type="number" id="fly-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">ft.</span>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <!-- Swim Speed -->
-                                <div class="row">
-                                    <label for="swim-speed-input" class="col-sm-6 col-form-label">Swim Speed:</label>
-                                    <div class="col-sm-6">
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="swim-speed-input" class="input-group-text attribute-label">Swim</span>
+                                        </div>
                                         <input type="number" id="swim-speed-input" class="form-control form-control-sm" min="0" max="999" value="30">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-
-
-                        <div class="row mt-4">
-                            <div class="col-4">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <label>Ability Scores</label>
-                                    </div>
-                                </div>
-                                <!-- STR -->
-                                <div class="row">
-                                    <label for="str-input" class="col-sm-2 col-form-label">STR:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" id="str-input" class="form-control form-control-sm" min="1" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
-                                    </div>
-                                    <div class="col-sm-2">
-                                        (<span id="strbonus"></span>)
-                                    </div>
-                                </div>
-                                <!-- DEX -->
-                                <div class="row">
-                                    <label for="dex-input" class="col-sm-2 col-form-label">DEX:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" id="dex-input" class="form-control form-control-sm" min="1" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
-                                    </div>
-                                    <div class="col-sm-2">
-                                        (<span id="dexbonus"></span>)
-                                    </div>
-                                </div>
-                                <!-- CON -->
-                                <div class="row">
-                                    <label for="con-input" class="col-sm-2 col-form-label">CON:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" id="con-input" class="form-control form-control-sm" min="1" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
-                                    </div>
-                                    <div class="col-sm-2">
-                                        (<span id="conbonus"></span>)
-                                    </div>
-                                </div>
-                                <!-- INT -->
-                                <div class="row">
-                                    <label for="int-input" class="col-sm-2 col-form-label">INT:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" id="int-input" class="form-control form-control-sm" min="1" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
-                                    </div>
-                                    <div class="col-sm-2">
-                                        (<span id="intbonus"></span>)
-                                    </div>
-                                </div>
-                                <!-- WIS -->
-                                <div class="row">
-                                    <label for="wis-input" class="col-sm-2 col-form-label">WIS:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" id="wis-input" class="form-control form-control-sm" min="1" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
-                                    </div>
-                                    <div class="col-sm-2">
-                                        (<span id="wisbonus"></span>)
-                                    </div>
-                                </div>
-                                <!-- CHA -->
-                                <div class="row">
-                                    <label for="cha-input" class="col-sm-2 col-form-label">CHA:</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" id="cha-input" class="form-control form-control-sm" min="1" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
-                                    </div>
-                                    <div class="col-sm-2">
-                                        (<span id="chabonus"></span>)
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">ft.</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
-
 
 
 
 
                         <div class="row">
-                            <label for="alignment-input" class="col-sm-3 col-form-label">Armor Type:</label>
-                            <div class="col-sm-9">
-                                <select id="armor-input" class="form-control form-control-sm" onchange="FormFunctions.ShowHideOtherArmor()">
+                            <div class="col-2 ability-scores">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6>Ability Scores</h6>
+                                    </div>
+                                </div>
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="str-input" class="input-group-text attribute-label">STR</span>
+                                        </div>
+                                        <input type="number" id="str-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
+                                        <div class="input-group-append">
+                                            <span id="strbonus" class="input-group-text ability-modifier">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="dex-input" class="input-group-text attribute-label">DEX</span>
+                                        </div>
+                                        <input type="number" id="dex-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('dex')">
+                                        <div class="input-group-append">
+                                            <span id="dexbonus" class="input-group-text ability-modifier">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="con-input" class="input-group-text attribute-label">CON</span>
+                                        </div>
+                                        <input type="number" id="con-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('con')">
+                                        <div class="input-group-append">
+                                            <span id="conbonus" class="input-group-text ability-modifier">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="int-input" class="input-group-text attribute-label">INT</</span>
+                                        </div>
+                                        <input type="number" id="int-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('int')">
+                                        <div class="input-group-append">
+                                            <span id="intbonus" class="input-group-text ability-modifier">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="wis-input" class="input-group-text attribute-label">WIS</</span>
+                                        </div>
+                                        <input type="number" id="wis-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('wis')">
+                                        <div class="input-group-append">
+                                            <span id="wisbonus" class="input-group-text ability-modifier">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pb-1">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <span for="cha-input" class="input-group-text attribute-label">CHA</</span>
+                                        </div>
+                                        <input type="number" id="cha-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('cha')">
+                                        <div class="input-group-append">
+                                            <span id="chabonus" class="input-group-text ability-modifier">0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="row pb-1">
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span for="armor-input" class="input-group-text attribute-label">Armor</</span>
+                                </div>
+
+                                <select id="armor-input" class="form-control form-control-sm">
                                     <option value="none" selected>None</option>
                                     <option value="natural armor">Natural Armor</option>
                                     <option value="mage armor">Mage Armor</option>
@@ -386,10 +411,15 @@
                                     <option value="plate">Plate</option>
                                     <option value="other">Other</option>
                                 </select>
-                                <div id="shield-box-note" class="box-note"><label for="shield-input">(Shield: <input id="shield-input" type="checkbox">)</label></div>
+
+                                <div class="input-group-append">
+                                    <!-- <div id="shield-box-note" class="box-note"> -->
+                                    <label>(Shield: <input id="shield-input" type="checkbox">)</label>
+                                    <!-- </div> -->
+                                </div>
+
                             </div>
                         </div>
-
 
 
 

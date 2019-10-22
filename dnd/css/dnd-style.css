@@ -13,7 +13,7 @@ body {
 .container {
     /*font-family: Georgia, Arial, sans-serif;*/
     /*text-align: left;*/
-    max-width: 1000px;
+    /*max-width: 1000px;*/
     /*margin: 0 auto;*/
     /*line-height: 125%;*/
     background-image: url('../dndimages/papyr.jpg');
@@ -24,6 +24,22 @@ body {
 .content {
     padding: 25px 50px;
 }
+
+
+.movement-speeds .attribute-label {
+	min-width: 68px !important;
+}
+
+.ability-scores .attribute-label {
+	min-width: 50px !important;
+}
+
+.ability-scores .ability-modifier {
+	min-width: 42px !important;
+}
+
+
+
 
 /*h1,
 h2,
