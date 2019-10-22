@@ -5,27 +5,27 @@ html {
 body {
     background-attachment: fixed;
     background-size: cover;
-	background-position: center; 
+	background-position: center;
     margin: 0;
 	height: 100%;
 }
 
 .container {
-    font-family: Georgia, Arial, sans-serif;
-    text-align: left;
+    /*font-family: Georgia, Arial, sans-serif;*/
+    /*text-align: left;*/
     max-width: 1000px;
-    margin: 0 auto;
-    line-height: 125%;
+    /*margin: 0 auto;*/
+    /*line-height: 125%;*/
     background-image: url('../dndimages/papyr.jpg');
-    border-style: none;
-	min-height: 100%;
+    /*border-style: none;*/
+	/*min-height: 100%;*/
 }
 
 .content {
     padding: 25px 50px;
 }
 
-h1,
+/*h1,
 h2,
 h3,
 h4,
@@ -46,7 +46,7 @@ h2 {
 
 h3 {
     font-size: 1.2rem;
-}
+}*/
 
 hr {
     border-style: solid;
@@ -63,7 +63,7 @@ ul {
     padding-left: 1.5rem;
 }
 
-button {
+/*button {
     color: #ffffff;
     font-size: 1rem;
     font-family: Tahoma, Georgia, Arial, sans-serif;
@@ -75,9 +75,9 @@ button {
 button:hover {
     background: #a5c791;
     text-decoration: none;
-}
+}*/
 
-select {
+/*select {
     height: 1.5rem;
     font-family: Tahoma, Georgia, Arial, sans-serif;
     font-size: .8rem;
@@ -109,7 +109,7 @@ textarea {
     letter-spacing: normal;
     line-height: normal;
     width: 80%;
-}
+}*/
 
 table {
     table-layout: fixed;
@@ -269,7 +269,7 @@ label {
     #char-gen-body {
         background-image: url("../dndimages/chargenbkg.jpg");
     }
-	
+
     #magic-items-body {
         background-image: url("../dndimages/magicitemsbkg.jpg");
     }

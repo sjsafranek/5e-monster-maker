@@ -403,7 +403,7 @@ var FormFunctions = {
         this.ShowHideTypeOther();
 
         // Tag and Alignment
-        $("#tag-input").val(mon.tag);
+        // $("#tag-input").val(mon.tag);
         $("#alignment-input").val(mon.alignment);
 
         // Armor Class
@@ -463,7 +463,7 @@ var FormFunctions = {
         this.MakeDisplayList("reactions", false, true);
         this.MakeDisplayList("legendaries", false, true);
 
-        // Is Legendary?	
+        // Is Legendary?
         $("#is-legendary-input").prop("checked", mon.isLegendary);
         this.ShowHideLegendaryCreature();
 
@@ -760,7 +760,7 @@ var GetVariablesFunctions = {
         mon.type = $("#type-input").val();
         if (mon.type == "*")
             mon.type = $("#other-type-input").val();
-        mon.tag = $("#tag-input").val().trim();
+        // mon.tag = $("#tag-input").val().trim();
         mon.alignment = $("#alignment-input").val().trim();
 
         // Armor Class
@@ -784,7 +784,7 @@ var GetVariablesFunctions = {
         mon.speedDesc = $("#custom-speed-prompt").val();
         mon.customSpeed = $("#custom-speed-input").prop("checked");
 
-        // Stats	
+        // Stats
         mon.strPoints = $("#str-input").val();
         mon.dexPoints = $("#dex-input").val();
         mon.conPoints = $("#con-input").val();
@@ -820,7 +820,7 @@ var GetVariablesFunctions = {
         mon.name = preset.name.trim();
         mon.size = preset.size.trim().toLowerCase();
         mon.type = preset.type.trim();
-        mon.tag = preset.subtype.trim();
+        // mon.tag = preset.subtype.trim();
         mon.alignment = preset.alignment.trim();
 
         // Stats
@@ -1140,7 +1140,7 @@ var GetVariablesFunctions = {
 		if(Array.isArray(abilityDesc))
 			abilityDesc = abilityDesc.join("\n");
         abilityDesc = abilityDesc.trim();
-		
+
         // In case of spellcasting
         if (arrName == "abilities" && abilityName.toLowerCase().includes("spellcasting") && abilityDesc.includes("\n")) {
             abilityDesc = abilityDesc.split("\u2022").join(""), // Remove bullet points
