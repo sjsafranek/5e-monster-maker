@@ -43,6 +43,18 @@ body {
 	min-width: 81px !important;
 }
 
+.box-note {
+	font-size: 10px !important;
+}
+
+.senses .attribute-label {
+	min-width: 102px !important;
+}
+
+.defenses .attribute-label {
+	min-width: 89px !important;
+}
+
 
 
 /*h1,

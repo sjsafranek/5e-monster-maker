@@ -160,17 +160,16 @@
                     <div class="options">
 
 
+                        <div class="row">
+                            <div class="col-7">
 
-
-                                <div class="row">
-                                    <div class="col-4 basic-info">
-
+                                <div class="row pt-4">
+                                    <div class="col-6 basic-info">
                                         <div class="row">
                                             <div class="col-12">
                                                 <h6>Basic Info</h6>
                                             </div>
                                         </div>
-
                                         <div class="row pb-1 pr-3 pl-3">
                                             <div class="input-group input-group-sm">
                                                 <div class="input-group-prepend">
@@ -179,7 +178,6 @@
                                                 <input id="name-input" type="text" value="Monster" class="form-control form-control-sm">
                                             </div>
                                         </div>
-
                                         <div class="row pb-1 pr-3 pl-3">
                                             <div class="input-group input-group-sm">
                                                 <div class="input-group-prepend">
@@ -195,7 +193,6 @@
                                                 </select>
                                             </div>
                                         </div>
-
                                         <div class="row pb-1 pr-3 pl-3">
                                             <div class="input-group input-group-sm">
                                                 <div class="input-group-prepend">
@@ -220,15 +217,14 @@
                                                 </select>
                                             </div>
                                         </div>
-
                                         <div class="row pb-1 pr-3 pl-3">
                                             <div class="input-group input-group-sm">
                                                 <div class="input-group-prepend">
                                                     <span for="alignment-input" class="input-group-text attribute-label">Alignment</span>
                                                 </div>
                                                 <select id="alignment-input" class="form-control form-control-sm">
-                                                    <option value="any" selected>Any</option>
-                                                    <option value="any Good" select>Any Good</option>
+                                                    <option value="any alignment" selected>Any</option>
+                                                    <option value="any good" select>Any Good</option>
                                                     <option value="lawful good">Lawful Good</option>
                                                     <option value="good">Good</option>
                                                     <option value="chaotic good">Chaotic Good</option>
@@ -245,10 +241,21 @@
                                                 </select>
                                             </div>
                                         </div>
-
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="cr-input" class="input-group-text attribute-label">CR</span>
+                                                </div>
+                                                <select id="cr-input" class="form-control form-control-sm" onchange="InputFunctions.InputCR()">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div id="prof-bonus" class="small">
+                                            </div>
+                                        </div>
                                     </div>
-
-                                    <div class="col-3 movement-speeds">
+                                    <div class="col-6 movement-speeds">
                                         <div class="row">
                                             <div class="col-12">
                                                 <h6>Movement</h6>
@@ -310,95 +317,12 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-                                    <div class="col-5 armor-and-hitpoints">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <h6>Hit Points</h6>
-                                            </div>
-                                        </div>
-
-                                        <div class="row pb-1 pr-3 pl-3">
-                                            <div class="input-group input-group-sm">
-                                                <div class="input-group-prepend">
-                                                    <span for="hp-text-input" class="input-group-text attribute-label">Hit Points</</span>
-                                                </div>
-                                                <input type="text" id="hp-text-input" class="form-control form-control-sm" value="4 (1d8)">
-                                            </div>
-                                        </div>
-
-                                        <div class="row pb-1 pr-3 pl-3">
-
-                                            <div class="input-group input-group-sm">
-                                                <div class="input-group-prepend">
-                                                    <span for="armor-input" class="input-group-text attribute-label">Armor</</span>
-                                                </div>
-
-                                                <select id="armor-input" class="form-control form-control-sm" onchange="FormFunctions.ShowHideOtherArmor();">
-                                                    <option value="none" selected>None</option>
-                                                    <option value="natural armor">Natural Armor</option>
-                                                    <option value="mage armor">Mage Armor</option>
-                                                    <option value="padded armor">Padded</option>
-                                                    <option value="leather armor">Leather</option>
-                                                    <option value="studded leather">Studded Leather</option>
-                                                    <option value="hide armor">Hide</option>
-                                                    <option value="chain shirt">Chain Shirt</option>
-                                                    <option value="scale mail">Scale Mail</option>
-                                                    <option value="breastplate">Breastplate</option>
-                                                    <option value="half plate">Half Plate</option>
-                                                    <option value="ring mail">Ring Mail</option>
-                                                    <option value="chain mail">Chain Mail</option>
-                                                    <option value="splint">Splint</option>
-                                                    <option value="plate">Plate</option>
-                                                    <option value="other">Other</option>
-                                                </select>
-
-                                                <div class="input-group-append">
-                                                    <label class="input-group-text box-note">
-                                                        (Shield: <input id="shield-input" type="checkbox">)
-                                                    </label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                        <div id="natarmor-prompt" class="row pb-1 pr-3 pl-3">
-                                            <div class="input-group input-group-sm">
-                                                <div class="input-group-prepend">
-                                                    <span for="natarmor-input" class="input-group-text attribute-label">Natural Armor</</span>
-                                                </div>
-                                                <input type="number" id="natarmor-input" min="1" max="99" value="3" class="form-control form-control-sm">
-                                            </div>
-                                        </div>
-
-                                        <div id="otherarmor-prompt" class="row pb-1 pr-3 pl-3">
-                                            <div class="input-group input-group-sm">
-                                                <div class="input-group-prepend">
-                                                    <span for="otherarmor-input" class="input-group-text attribute-label">Description</</span>
-                                                </div>
-                                                <input type="text" id="otherarmor-input" class="form-control form-control-sm" value="10 (armor)">
-                                                <div class="input-group-append">
-                                                    <span id="otherarmor-box-note" class="input-group-text box-note">
-                                                        <i>Use _ to italicize</i>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
                                 </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-3 ability-scores">
+                                <div class="row pt-4">
+                                    <div class="col-6 ability-scores">
                                         <div class="row">
                                             <div class="col-12">
-                                                <h6>Ability Scores</h6>
+                                                <h6>Ability Scores / Saves</h6>
                                             </div>
                                         </div>
                                         <div class="row pb-1 pr-3 pl-3">
@@ -409,6 +333,11 @@
                                                 <input type="number" id="str-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('str')">
                                                 <div class="input-group-append">
                                                     <span id="strbonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" title="Saving throw">
+                                                        <input type="checkbox" id="strsave">
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
@@ -421,6 +350,11 @@
                                                 <div class="input-group-append">
                                                     <span id="dexbonus" class="input-group-text ability-modifier">0</span>
                                                 </div>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" title="Saving throw">
+                                                        <input type="checkbox" id="dexsave">
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row pb-1 pr-3 pl-3">
@@ -431,6 +365,11 @@
                                                 <input type="number" id="con-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('con')">
                                                 <div class="input-group-append">
                                                     <span id="conbonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" title="Saving throw">
+                                                        <input type="checkbox" id="consave">
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
@@ -443,6 +382,11 @@
                                                 <div class="input-group-append">
                                                     <span id="intbonus" class="input-group-text ability-modifier">0</span>
                                                 </div>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" title="Saving throw">
+                                                        <input type="checkbox" id="intsave">
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row pb-1 pr-3 pl-3">
@@ -453,6 +397,11 @@
                                                 <input type="number" id="wis-input" class="form-control form-control-sm" min="0" max="99" value="10" onchange="FormFunctions.ChangeBonus('wis')">
                                                 <div class="input-group-append">
                                                     <span id="wisbonus" class="input-group-text ability-modifier">0</span>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" title="Saving throw">
+                                                        <input type="checkbox" id="wissave">
+                                                    </label>
                                                 </div>
                                             </div>
                                         </div>
@@ -465,47 +414,78 @@
                                                 <div class="input-group-append">
                                                     <span id="chabonus" class="input-group-text ability-modifier">0</span>
                                                 </div>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text" title="Saving throw">
+                                                        <input type="checkbox" id="chasave">
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <div class="col-3 saving-throws">
+
+
+
+                                    <div class="col-6 senses">
                                         <div class="row">
                                             <div class="col-12">
-                                                <h6>Saving Throws</h6>
+                                                <h6>Senses</h6>
                                             </div>
                                         </div>
                                         <div class="row pb-1 pr-3 pl-3">
                                             <div class="input-group input-group-sm">
                                                 <div class="input-group-prepend">
-                                                    <span for="sthrows-input" class="input-group-text attribute-label">Save</</span>
+                                                    <span for="blindsight-input" class="input-group-text attribute-label">Blindsight</span>
                                                 </div>
-                                                <select id="sthrows-input" class="form-control form-control-sm">
-                                                    <option value="str">Strength</option>
-                                                    <option value="dex">Dexterity</option>
-                                                    <option value="con">Constitution</option>
-                                                    <option value="int">Intelligence</option>
-                                                    <option value="wis">Wisdom</option>
-                                                    <option value="cha">Charisma</option>
-                                                </select>
+                                                <input type="number" id="blindsight-input" class="form-control form-control-sm" min="0" max="999" value="0" onchange="FormFunctions.ShowHideBlindBox()">
                                                 <div class="input-group-append">
-                                                    <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddSthrowInput()">+</button>
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
+                                                <div id="blind-box-note" class="input-group-append">
+                                                    <label class="input-group-text box-note" for="blindness-input">(Blind beyond: <input type="checkbox" id="blindness-input">)</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row pb-1 pr-3 pl-3">
-                                            <div id="sthrows-input-section">
-                                                <ul id="sthrows-input-list" class="statblock-list"></ul>
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="darkvision-input" class="input-group-text attribute-label">Darkvision</span>
+                                                </div>
+                                                <input type="number" id="darkvision-input" class="form-control form-control-sm" min="0" max="999" value="0">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="tremorsense-input" class="input-group-text attribute-label">Tremorsense</span>
+                                                </div>
+                                                <input type="number" id="tremorsense-input" class="form-control form-control-sm" min="0" max="999" value="0">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="truesight-input" class="input-group-text attribute-label">Truesight</span>
+                                                </div>
+                                                <input type="number" id="truesight-input" class="form-control form-control-sm" min="0" max="999" value="0">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">ft.</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                 </div>
-
-
-
-                                <div class="row">
-                                    <div class="col-3 skills">
+                                <div class="row pt-4">
+                                    <div class="col-6 skills">
                                         <div class="row">
                                             <div class="col-12">
                                                 <h6>Skills</h6>
@@ -548,203 +528,345 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-6 languages">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Languages</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="languages-input" class="input-group-text attribute-label">Language</</span>
+                                                </div>
+                                                <select id="languages-input" class="form-control form-control-sm" onchange="FormFunctions.ShowHideLanguageOther()">
+                                                    <option value="All">All</option>
+                                                    <option value="Abyssal">Abyssal</option>
+                                                    <option value="Aquan">Aquan</option>
+                                                    <option value="Auran">Auran</option>
+                                                    <option value="Celestial">Celestial</option>
+                                                    <option value="Common">Common</option>
+                                                    <option value="Deep Speech">Deep Speech</option>
+                                                    <option value="Draconic">Draconic</option>
+                                                    <option value="Dwarvish">Dwarvish</option>
+                                                    <option value="Elvish">Elvish</option>
+                                                    <option value="Giant">Giant</option>
+                                                    <option value="Gnomish">Gnomish</option>
+                                                    <option value="Goblin">Goblin</option>
+                                                    <option value="Halfling">Halfling</option>
+                                                    <option value="Ignan">Ignan</option>
+                                                    <option value="Infernal">Infernal</option>
+                                                    <option value="Orc">Orc</option>
+                                                    <option value="Primordial">Primordial</option>
+                                                    <option value="Sylvan">Sylvan</option>
+                                                    <option value="Terran">Terran</option>
+                                                    <option value="Undercommon">Undercommon</option>
+                                                    <option value="*">Other</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddLanguageInput()">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <input type="text" id="other-language-input" placeholder="Other" value="" class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="telepathy-input" class="input-group-text attribute-label">Telepathy</</span>
+                                                </div>
+                                                <input type="number" id="telepathy-input" placeholder="Other" min="0" max="995" step="5" value="0" class="form-control form-control-sm">
+                                                <div class="input-group-append">
+                                                    <span for="telepathy-input" class="input-group-text attribute-label">ft.</</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div id="languages-input-section">
+                                                <ul id="languages-input-list" class="statblock-list"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-
-
-
-
-
-
-
-
-
-                        <table id="properties-lists-form">
-
-                                <td id="conditions-form">
-                                    <label for="conditions-input">Condition Immunities: </label><br>
-                                    <select id="conditions-input">
-                                        <option value="blinded">Blinded</option>
-                                        <option value="charmed">Charmed</option>
-                                        <option value="deafened">Deafened</option>
-                                        <option value="exhaustion">Exhaustion</option>
-                                        <option value="frightened">Frightened</option>
-                                        <option value="grappled">Grappled</option>
-                                        <option value="incapacitated">Incapacitated</option>
-                                        <option value="invisible">Invisible</option>
-                                        <option value="paralyzed">Paralyzed</option>
-                                        <option value="petrified">Petrified</option>
-                                        <option value="poisoned">Poisoned</option>
-                                        <option value="prone">Prone</option>
-                                        <option value="restrained">Restrained</option>
-                                        <option value="stunned">Stunned</option>
-                                        <option value="unconscious">Unconscious</option>
-                                    </select>
-                                    <button type="button" onclick="InputFunctions.AddConditionInput()">Immune</button>
-                                    <div id="conditions-input-section">
-                                        <ul id="conditions-input-list" class="statblock-list"></ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                        <br>
-                        <table>
-                            <tr>
-                                <td id="damagetypes-form" colspan="2">
-                                    <label for="damagetypes-input">Damage Types:<br>
-                                        <select id="damagetypes-input" onchange="FormFunctions.ShowHideDamageOther()">
-                                            <option value="acid">Acid</option>
-                                            <option value="bludgeoning">Bludgeoning</option>
-                                            <option value="cold">Cold</option>
-                                            <option value="fire">Fire</option>
-                                            <option value="force">Force</option>
-                                            <option value="lightning">Lightning</option>
-                                            <option value="necrotic">Necrotic</option>
-                                            <option value="piercing">Piercing</option>
-                                            <option value="poison">Poison</option>
-                                            <option value="psychic">Psychic</option>
-                                            <option value="radiant">Radiant</option>
-                                            <option value="slashing">Slashing</option>
-                                            <option value="thunder">Thunder</option>
-                                            <option value="bludgeoning, piercing, and slashing from nonmagical attacks">Nonmagical Attacks</option>
-                                            <option value="bludgeoning, piercing, and slashing from nonmagical attacks that aren't silvered">Non-Silvered Attacks</option>
-                                            <option value="bludgeoning, piercing, and slashing from nonmagical attacks that aren't adamantine">Non-Adamantine Attacks</option>
-                                            <option value="*">Other</option>
-                                        </select>
-                                    </label>
-                                    <div><input id="other-damage-input" type="text" value=""></div>
-                                    <div>
-                                        <button type="button" onclick="InputFunctions.AddDamageTypeInput('v')">Vulnerable</button>
-                                        <button type="button" onclick="InputFunctions.AddDamageTypeInput('r')">Resistant</button>
-                                        <button type="button" onclick="InputFunctions.AddDamageTypeInput('i')">Immune</button>
-                                    </div>
-                                    <div id="damage-input-section">
-                                        <ul id="damage-input-list" class="statblock-list"></ul>
-                                    </div>
-                                </td>
-                                <td id="languages-form">
-                                    <label for="languages-input">Languages:<br>
-                                        <select id="languages-input" onchange="FormFunctions.ShowHideLanguageOther()">
-                                            <option value="All">All</option>
-                                            <option value="Abyssal">Abyssal</option>
-                                            <option value="Aquan">Aquan</option>
-                                            <option value="Auran">Auran</option>
-                                            <option value="Celestial">Celestial</option>
-                                            <option value="Common">Common</option>
-                                            <option value="Deep Speech">Deep Speech</option>
-                                            <option value="Draconic">Draconic</option>
-                                            <option value="Dwarvish">Dwarvish</option>
-                                            <option value="Elvish">Elvish</option>
-                                            <option value="Giant">Giant</option>
-                                            <option value="Gnomish">Gnomish</option>
-                                            <option value="Goblin">Goblin</option>
-                                            <option value="Halfling">Halfling</option>
-                                            <option value="Ignan">Ignan</option>
-                                            <option value="Infernal">Infernal</option>
-                                            <option value="Orc">Orc</option>
-                                            <option value="Primordial">Primordial</option>
-                                            <option value="Sylvan">Sylvan</option>
-                                            <option value="Terran">Terran</option>
-                                            <option value="Undercommon">Undercommon</option>
-                                            <option value="*">Other</option>
-                                        </select>
-                                    </label>
-                                    <label for="telepathy-input" style="margin-left: .5rem;">Telepathy:<br><input type="number" id="telepathy-input" min="0" max="995" step="5" value="0"> ft.</label>
-                                    <div><input id="other-language-input" type="text" value=""></div>
-                                    <div><button type="button" onclick="InputFunctions.AddLanguageInput()">Proficient</button></div>
-                                    <div id="languages-input-section">
-                                        <ul id="languages-input-list" class="statblock-list"></ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                        <br>
-                        <table id="senses-form">
-                            <tr>
-                                <td>
-                                    <label for="blindsight-input">Blindsight: <input type="number" id="blindsight-input" min="0" max="995" step="5" value="0" onchange="FormFunctions.ShowHideBlindBox()"> ft.</label><br>
-                                    <div id="blind-box-note" class="box-note"><label for="blindness-input">(Blind beyond: <input type="checkbox" id="blindness-input">)</label></div>
-                                </td>
-                                <td><label for="darkvision-input">Darkvision: <input type="number" id="darkvision-input" min="0" max="995" step="5" value="0"> ft.</label></td>
-                                <td><label for="tremorsense-input">Tremorsense: <input type="number" id="tremorsense-input" min="0" max="995" step="5" value="0"> ft.</label></td>
-                                <td><label for="truesight-input">Truesight: <input type="number" id="truesight-input" min="0" max="995" step="5" value="0"> ft.</label></td>
-                            </tr>
-                        </table>
-                        <br>
-                        <div id="cr-form">
-                            <label for="cr-input">Challenge Rating:
-                                <select id="cr-input" onchange="InputFunctions.InputCR()"></select>
-                            </label>
-                            <br>
-                            <div id="prof-bonus"></div>
-                        </div>
-                        <hr>
-                        <div>
-                            <label for="is-legendary-input"><b>Legendary Creature:</b> <input type="checkbox" id="is-legendary-input" onclick="FormFunctions.ShowHideLegendaryCreature()"></label>
-                        </div>
-                        <div id="legendary-actions-form">
-                            <br>
-                            <b>Legendary Actions Description:</b>
-                            <div><label for="legendaries-descsection-input" style="width: 100%"><textarea id="legendaries-descsection-input" rows="4"></textarea></label></div>
-                            <div><button type="button" onclick="InputFunctions.LegendaryDescriptionDefaultInput()">Reset to Default</button></div>
-                        </div>
-                        <br>
-                        <b>Abilities:</b>
-                        <div><label for="abilities-name-input" style="width: 100%;">Name: <input id="abilities-name-input" type="text" value="" style="margin-right: 40px; width: 30%;"></label></div>
-                        <div><textarea id="abilities-desc-input" style="height: 10em;"></textarea></div>
-                        <div>
-                            <button type="button" id="add-ability-button" onclick="InputFunctions.AddAbilityInput('abilities')">Add Ability</button>
-                            <button type="button" id="add-action-button" onclick="InputFunctions.AddAbilityInput('actions')">Add Action</button>
-                            <button type="button" id="add-reaction-button" onclick="InputFunctions.AddAbilityInput('reactions')">Add Reaction</button>
-                            <button type="button" id="add-legendary-button" onclick="InputFunctions.AddAbilityInput('legendaries')">Add Legendary Action</button>
-                        </div>
-                        <div>
-                            <select id="common-ability-input"></select>
-                            <button type="button" id="add-common-ability-button" onclick="InputFunctions.AddCommonAbilityInput()">Use Preset</button>
-                        </div>
-                        <div>
-                            <label for="format-helper-checkbox">Show Formatting Help: <input type="checkbox" id="format-helper-checkbox" onclick="FormFunctions.ShowHideFormatHelper()"></label>
-                        </div>
-                        <div id="format-helper" style="text-align: left; padding: 0 2rem;">
-        					<br>
-        					<div>Use _ to italicize and ** to bold. For Spellcasting lists, use > to reverse-indent.</div>
-        					<br>
-        					<div><b>[MON]</b>: Shows the monster's name.</div>
-        					<div><b>[CHA]</b>: Shows the monster's charisma modifier.</div>
-        					<div><b>[3D6]</b>: Computes 3d6.</div>
-        					<div><b>[STR ATK]</b>: Calculates the modifier to the monster's attack roll for a strength-based attack.</div>
-        					<div><b>[DEX 2D8]</b>: Calculates the damage roll for a dexterity-based attack with damage dice 2d8.</div>
-        					<div><b>[WIS SAVE]</b>: Calculates the save DC vs the monster's wisdom.</div>
-        					<div><b>[3D6 + 1], [STR ATK - 2], [WIS SAVE + 3]</b>: Adds a modifier to the given values.</div>
-        					<br>
-                        </div>
-                        <div style="text-align: left; min-height: 5rem;">
-                            <div id="abilities-input-section"><b>Abilities:</b><br>
-                                <ul id="abilities-input-list" class="statblock-list"></ul>
                             </div>
-                            <div id="actions-input-section"><b>Actions:</b><br>
-                                <ul id="actions-input-list" class="statblock-list"></ul>
-                            </div>
-                            <div id="reactions-input-section"><b>Reactions:</b><br>
-                                <ul id="reactions-input-list" class="statblock-list"></ul>
-                            </div>
-                            <div id="legendaries-input-section"><b>Legendary Actions:</b><br>
-                                <ul id="legendaries-input-list" class="statblock-list"></ul>
+                            <div class="col-5">
+                                <div class="row pt-4 defenses">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Hit Points</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="hp-text-input" class="input-group-text attribute-label">Hit Points</</span>
+                                                </div>
+                                                <input type="text" id="hp-text-input" class="form-control form-control-sm" value="4 (1d8)">
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="armor-input" class="input-group-text attribute-label">Armor</</span>
+                                                </div>
+                                                <select id="armor-input" class="form-control form-control-sm" onchange="FormFunctions.ShowHideOtherArmor();">
+                                                    <option value="none" selected>None</option>
+                                                    <option value="natural armor">Natural Armor</option>
+                                                    <option value="mage armor">Mage Armor</option>
+                                                    <option value="padded armor">Padded</option>
+                                                    <option value="leather armor">Leather</option>
+                                                    <option value="studded leather">Studded Leather</option>
+                                                    <option value="hide armor">Hide</option>
+                                                    <option value="chain shirt">Chain Shirt</option>
+                                                    <option value="scale mail">Scale Mail</option>
+                                                    <option value="breastplate">Breastplate</option>
+                                                    <option value="half plate">Half Plate</option>
+                                                    <option value="ring mail">Ring Mail</option>
+                                                    <option value="chain mail">Chain Mail</option>
+                                                    <option value="splint">Splint</option>
+                                                    <option value="plate">Plate</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <label class="input-group-text box-note">
+                                                        (Shield: <input id="shield-input" type="checkbox">)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="natarmor-prompt" class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="natarmor-input" class="input-group-text attribute-label">Natural Armor</</span>
+                                                </div>
+                                                <input type="number" id="natarmor-input" min="1" max="99" value="3" class="form-control form-control-sm">
+                                            </div>
+                                        </div>
+                                        <div id="otherarmor-prompt" class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="otherarmor-input" class="input-group-text attribute-label">Description</</span>
+                                                </div>
+                                                <input type="text" id="otherarmor-input" class="form-control form-control-sm" value="10 (armor)">
+                                                <div class="input-group-append">
+                                                    <span id="otherarmor-box-note" class="input-group-text box-note">
+                                                        <i>Use _ to italicize</i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Condition Immunities</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="conditions-input" class="input-group-text attribute-label">Condition</</span>
+                                                </div>
+                                                <select id="conditions-input" class="form-control form-control-sm">
+                                                    <option value="blinded">Blinded</option>
+                                                    <option value="charmed">Charmed</option>
+                                                    <option value="deafened">Deafened</option>
+                                                    <option value="exhaustion">Exhaustion</option>
+                                                    <option value="frightened">Frightened</option>
+                                                    <option value="grappled">Grappled</option>
+                                                    <option value="incapacitated">Incapacitated</option>
+                                                    <option value="invisible">Invisible</option>
+                                                    <option value="paralyzed">Paralyzed</option>
+                                                    <option value="petrified">Petrified</option>
+                                                    <option value="poisoned">Poisoned</option>
+                                                    <option value="prone">Prone</option>
+                                                    <option value="restrained">Restrained</option>
+                                                    <option value="stunned">Stunned</option>
+                                                    <option value="unconscious">Unconscious</option>
+                                                </select>
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddConditionInput()">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div id="conditions-input-section">
+                                                <ul id="conditions-input-list" class="statblock-list"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row pt-4">
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h6>Damage Types</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="input-group input-group-sm">
+                                                <div class="input-group-prepend">
+                                                    <span for="damagetypes-input" class="input-group-text attribute-label">Damage</</span>
+                                                </div>
+                                                <select id="damagetypes-input" class="form-control form-control-sm" onchange="FormFunctions.ShowHideDamageOther()">
+                                                    <option value="acid">Acid</option>
+                                                    <option value="bludgeoning">Bludgeoning</option>
+                                                    <option value="cold">Cold</option>
+                                                    <option value="fire">Fire</option>
+                                                    <option value="force">Force</option>
+                                                    <option value="lightning">Lightning</option>
+                                                    <option value="necrotic">Necrotic</option>
+                                                    <option value="piercing">Piercing</option>
+                                                    <option value="poison">Poison</option>
+                                                    <option value="psychic">Psychic</option>
+                                                    <option value="radiant">Radiant</option>
+                                                    <option value="slashing">Slashing</option>
+                                                    <option value="thunder">Thunder</option>
+                                                    <option value="bludgeoning, piercing, and slashing from nonmagical attacks">Nonmagical Attacks</option>
+                                                    <option value="bludgeoning, piercing, and slashing from nonmagical attacks that aren't silvered">Non-Silvered Attacks</option>
+                                                    <option value="bludgeoning, piercing, and slashing from nonmagical attacks that aren't adamantine">Non-Adamantine Attacks</option>
+                                                    <option value="*">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <input id="other-damage-input" type="text" value="" placeholder="Other" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div class="col-4 pl-6">
+                                                <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddDamageTypeInput('v')">Vulnerable</button>
+                                            </div>
+                                            <div class="col-4">
+                                                <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddDamageTypeInput('r')">Resistant</button>
+                                            </div>
+                                            <div class="col-4 pr-6">
+                                                <button type="button" class="btn btn-sm btn-success" onclick="InputFunctions.AddDamageTypeInput('i')">Immune</button>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-1 pr-3 pl-3">
+                                            <div id="damage-input-section">
+                                                <ul id="damage-input-list" class="statblock-list"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <br>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row pt-4">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h6>Abilities</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="row pb-1 pr-3 pl-3">
+                                        <select id="common-ability-input" class="form-control form-control-sm" onchange="InputFunctions.AddCommonAbilityInput()"></select>
+                                    </div>
+                                    <div class="row pb-1 pr-3 pl-3">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-prepend">
+                                                <span for="abilities-name-input" class="input-group-text attribute-label">Ability Name</</span>
+                                            </div>
+                                            <input type="text" id="abilities-name-input" class="form-control form-control-sm" value="">
+                                        </div>
+                                    </div>
+                                    <div class="row pb-1 pr-3 pl-3">
+                                        <div class="input-group input-group-sm">
+                                            <textarea type="text" id="abilities-desc-input" class="form-control form-control-sm" value="" style="height: 10em;"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row pb-1 pr-3 pl-3">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-prepend">
+                                                <span for="ability-type" class="input-group-text attribute-label">Type</</span>
+                                            </div>
+                                            <select id="ability-type" class="form-control form-control-sm">
+                                                <option value="abilities">Ability</option>
+                                                <option value="actions">Action</option>
+                                                <option value="reactions">Reaction</option>
+                                                <option value="legendaries">Legendary Action</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button class="btn btn-sm btn-success" id="createAbility">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="row pb-1 pr-3 pl-3" style="text-align: left; padding: 0 2rem; font-size: 12px;">
+                                        <div>Use _ to italicize and ** to bold. For Spellcasting lists, use > to reverse-indent.</div>
+                                        <div><b>[MON]</b>: Shows the monster's name.</div>
+                                        <div><b>[CHA]</b>: Shows the monster's charisma modifier.</div>
+                                        <div><b>[3D6]</b>: Computes 3d6.</div>
+                                        <div><b>[STR ATK]</b>: Calculates the modifier to the monster's attack roll for a strength-based attack.</div>
+                                        <div><b>[DEX 2D8]</b>: Calculates the damage roll for a dexterity-based attack with damage dice 2d8.</div>
+                                        <div><b>[WIS SAVE]</b>: Calculates the save DC vs the monster's wisdom.</div>
+                                        <div><b>[3D6 + 1], [STR ATK - 2], [WIS SAVE + 3]</b>: Adds a modifier to the given values.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div style="text-align: left; min-height: 5rem;">
+                                    <div id="abilities-input-section"><b>Abilities:</b><br>
+                                        <ul id="abilities-input-list" class="statblock-list"></ul>
+                                    </div>
+                                    <div id="actions-input-section"><b>Actions:</b><br>
+                                        <ul id="actions-input-list" class="statblock-list"></ul>
+                                    </div>
+                                    <div id="reactions-input-section"><b>Reactions:</b><br>
+                                        <ul id="reactions-input-list" class="statblock-list"></ul>
+                                    </div>
+                                    <div id="legendaries-input-section"><b>Legendary Actions:</b><br>
+                                        <ul id="legendaries-input-list" class="statblock-list"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="footer"><a href="https://github.com/Tetra-cube/Tetra-cube.github.io">GitHub Repo</a></div>
+
+                <!-- <hr>
+                <div>
+                    <label for="is-legendary-input"><b>Legendary Creature:</b> <input type="checkbox" id="is-legendary-input" onclick="FormFunctions.ShowHideLegendaryCreature()"></label>
+                </div>
+                <div id="legendary-actions-form">
+                    <br>
+                    <b>Legendary Actions Description:</b>
+                    <div><label for="legendaries-descsection-input" style="width: 100%"><textarea id="legendaries-descsection-input" rows="4"></textarea></label></div>
+                    <div><button type="button" onclick="InputFunctions.LegendaryDescriptionDefaultInput()">Reset to Default</button></div>
+                </div>
+                <br> -->
+
+
+            </div>
         </div>
+        <div class="footer"><a href="https://github.com/Tetra-cube/Tetra-cube.github.io">GitHub Repo</a></div>
     </div>
 
     <script>
         $('.options input').on('change', UpdateBlockFromVariables);
         $('.options button').on('change', UpdateBlockFromVariables);
         $('.options select').on('change', UpdateBlockFromVariables);
+
+        $('#createAbility').on('click', function(e){
+            InputFunctions.AddAbilityInput(
+                $('#ability-type').val()
+            );
+        });
     </script>
 
 </body>

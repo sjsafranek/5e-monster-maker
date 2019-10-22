@@ -447,7 +447,13 @@ var FormFunctions = {
         $("#truesight-input").val(mon.truesight);
 
         // Properties
-        this.MakeDisplayList("sthrows", true);
+        $('#strsave').prop( 'checked', -1 != mon.sthrows.map(function(d){return d.name;}).indexOf('str') );
+        $('#dexsave').prop( 'checked', -1 != mon.sthrows.map(function(d){return d.name;}).indexOf('dex') );
+        $('#consave').prop( 'checked', -1 != mon.sthrows.map(function(d){return d.name;}).indexOf('con') );
+        $('#intsave').prop( 'checked', -1 != mon.sthrows.map(function(d){return d.name;}).indexOf('int') );
+        $('#wissave').prop( 'checked', -1 != mon.sthrows.map(function(d){return d.name;}).indexOf('wis') );
+        $('#chasave').prop( 'checked', -1 != mon.sthrows.map(function(d){return d.name;}).indexOf('cha') );
+
         this.MakeDisplayList("skills", true);
         this.MakeDisplayList("conditions", true);
         this.MakeDisplayList("damage", true);
@@ -669,13 +675,14 @@ var InputFunctions = {
 
     // Adding items to lists
 
-    AddSthrowInput: function() {
-        // Insert, complying with standard stat order
-        GetVariablesFunctions.AddSthrow($("#sthrows-input").val());
+    // AddSthrowInput: function() {
+    //     // Insert, complying with standard stat order
+    //     GetVariablesFunctions.AddSthrow($("#sthrows-input").val());
+    //
+    //     // Display
+    //     FormFunctions.MakeDisplayList("sthrows", true);
+    // },
 
-        // Display
-        FormFunctions.MakeDisplayList("sthrows", true);
-    },
 
     AddSkillInput: function(note) {
         // Insert Alphabetically
@@ -811,6 +818,15 @@ var GetVariablesFunctions = {
 
         // One or two columns ?
         mon.doubleColumns = $("#2col-input").prop("checked");
+
+
+        mon.sthrows = [];
+        $('#strsave').is(':checked') && this.AddSthrow('str');
+        $('#dexsave').is(':checked') && this.AddSthrow('dex');
+        $('#consave').is(':checked') && this.AddSthrow('con');
+        $('#intsave').is(':checked') && this.AddSthrow('int');
+        $('#wissave').is(':checked') && this.AddSthrow('wis');
+        $('#chasave').is(':checked') && this.AddSthrow('cha');
     },
 
     // Get all variables from preset
