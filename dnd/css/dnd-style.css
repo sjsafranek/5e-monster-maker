@@ -59,6 +59,20 @@ body {
 	font-size: 12px !important;
 }
 
+.monster-options span,
+.monster-options input,
+.monster-options select,
+.monster-options button,
+.monster-options ul {
+	font-size: 12px !important;
+}
+
+.monster-options ul {
+	list-style-type: none;
+}
+
+
+
 
 
 /*h1,
