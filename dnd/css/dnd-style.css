@@ -27,20 +27,20 @@ body {
 
 
 .movement-speeds .attribute-label {
-	min-width: 68px !important;
+	min-width: 57px !important;
 }
 
 .ability-scores .attribute-label {
-	min-width: 50px !important;
+	min-width: 45px !important;
 }
 
 .ability-scores .ability-modifier {
-	min-width: 42px !important;
+	min-width: 32px !important;
 }
 
 
 .basic-info .attribute-label {
-	min-width: 81px !important;
+	min-width: 73px !important;
 }
 
 .box-note {
@@ -48,14 +48,16 @@ body {
 }
 
 .senses .attribute-label {
-	min-width: 102px !important;
+	min-width: 90px !important;
 }
 
 .defenses .attribute-label {
-	min-width: 89px !important;
+	/*min-width: 89px !important;*/
 }
 
-.abilities-container {
+
+
+.monster-options  {
 	font-size: 12px !important;
 }
 

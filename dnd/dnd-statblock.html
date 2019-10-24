@@ -5,6 +5,12 @@
     <meta charset="utf-8" />
     <title>D&amp;D 5e Statblock Generator</title>
     <link rel="shortcut icon" type="image/x-icon" href="dndimages/favicon.ico" />
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script> -->
+
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/statblock-style.css">
     <link rel="stylesheet" type="text/css" href="css/statblock-page-style.css">
@@ -875,6 +881,59 @@
                 $('#ability-type').val()
             );
         });
+
+
+        function enableFileDrop($elem, callback) {
+        	$elem.get(0).ondrop = function(e) {
+        		e.preventDefault();
+        		$(this).css('outline', 'none');
+        		var file = e.dataTransfer.files[0];
+        		callback && callback(file);
+        	}
+        	$elem.get(0).ondragover = $elem.get(0).ondragenter = function(e) {
+        		e.preventDefault();
+        		$(this).css('outline', '2px dashed #92b0b3');
+        	};
+        	$elem.get(0).ondragstart = function(e) {
+        		e.preventDefault();
+        		$(this).css('outline', '2px dashed #92b0b3');
+        	};
+        	$elem.get(0).ondragend = $elem.get(0).ondragleave = function(e) {
+        		e.preventDefault();
+        		$(this).css('outline', 'none');
+        	};
+        }
+
+        enableFileDrop( $('.content'), function(file) {
+            console.log(file);
+
+            // check file size
+        	if (50*1024 < file.size) {
+        		swal.fire({'type':'warning', 'text': 'File is too large'});
+        		return;
+        	}
+
+        	// // check file type
+        	// if ('text/csv' != file.type) {
+        	// 	swal.fire({'type':'warning', 'text': "File must be 'text/csv'"});
+        	// 	return;
+        	// }
+
+        	// create file reader
+        	var reader = new FileReader();
+
+        	// parse file listener
+        	reader.onload = function(e) {
+                mon = JSON.parse(reader.result);
+                Populate();
+        	}
+
+        	// read file
+        	reader.readAsText(file);
+        });
+
+
+
     </script>
 
 </body>
