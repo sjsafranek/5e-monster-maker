@@ -74,13 +74,13 @@ function TryPrint() {
     printWindow.document.write('</div></body></html>');
 }
 
-// View as image function
-function TryImage() {
-    domtoimage.toBlob(document.getElementById("stat-block"))
-        .then(function(blob) {
-            window.saveAs(blob, mon.name.toLowerCase() + ".png");
-        });
-}
+// // View as image function
+// function TryImage() {
+//     domtoimage.toBlob(document.getElementById("stat-block"))
+//         .then(function(blob) {
+//             window.saveAs(blob, mon.name.toLowerCase() + ".png");
+//         });
+// }
 
 // Update the main stat block from form variables
 function UpdateBlockFromVariables(moveSeparationPoint) {
@@ -404,6 +404,22 @@ var FormFunctions = {
 
         // Tag and Alignment
         // $("#tag-input").val(mon.tag);
+
+        mon.alignment = mon.alignment.replace(' alignment', '');
+        mon.alignment = mon.alignment.replace(' (as its patron deity)', '');
+        mon.alignment = mon.alignment.replace('titan), ', '');
+        mon.alignment = mon.alignment.replace('nkosi), ', '');
+        switch(mon.alignment) {
+            case "good":
+                mon.alignment = "neutral good";
+                break;
+            case "neutral":
+                mon.alignment = "true neutral";
+                break;
+            case "evil":
+                mon.alignment = "neutral evil";
+                break;
+        }
         $("#alignment-input").val(mon.alignment);
 
         // Armor Class
@@ -769,6 +785,10 @@ var GetVariablesFunctions = {
         if (mon.type == "*")
             mon.type = $("#other-type-input").val();
         // mon.tag = $("#tag-input").val().trim();
+
+        if (!$("#alignment-input").val()) {
+            console.log(mon.alignment);
+        }
         mon.alignment = $("#alignment-input").val().trim();
 
         // Armor Class
@@ -1431,7 +1451,7 @@ var StringFunctions = {
         if (property.arr.length == 0) return "";
         let htmlClass = firstLine ? "property-line first" : "property-line",
             arr = Array.isArray(property.arr) ? property.arr.join(", ") : property.arr;
-        return "<div class=\"" + htmlClass + "\"><div><h4>" + property.name + "</h4> <p>" + this.FormatString(arr, false) + "</p></div></div><!-- property line -->"
+        return '<div class="' + htmlClass + ' ' + property.name.toLowerCase().replace(' ', '-') + '"><div><h4>' + property.name + "</h4> <p>" + this.FormatString(arr, false) + "</p></div></div><!-- property line -->"
     },
 
     MakeTraitHTML: function(name, description) {
@@ -1524,23 +1544,24 @@ var ArrayFunctions = {
 // Document ready function
 $(function() {
     // Load the preset monster names
-    $.getJSON("https://api.open5e.com/monsters/?format=json&fields=slug,name&limit=1000&document__slug=wotc-srd", function(srdArr) {
+    // $.getJSON("https://api.open5e.com/monsters/?format=json&fields=slug,name&limit=1000&document__slug=wotc-srd", function(srdArr) {
+    $.getJSON("https://api.open5e.com/monsters/?fields=slug%2Cname&format=json&limit=2000", function(srdArr) {
 			let monsterSelect = $("#monster-select");
-			monsterSelect.append("<option value=''></option>");
-			monsterSelect.append("<option value=''>-5e SRD-</option>");
+			// monsterSelect.append("<option value=''></option>");
+			// monsterSelect.append("<option value=''>-5e SRD-</option>");
             $.each(srdArr.results, function(index, value) {
                 monsterSelect.append("<option value='" + value.slug + "'>" + value.name + "</option>");
             })
-			$.getJSON("https://api.open5e.com/monsters/?format=json&fields=slug,name&limit=1000&document__slug=tob", function(tobArr) {
-				monsterSelect.append("<option value=''></option>");
-				monsterSelect.append("<option value=''>-Tome of Beasts (Kobold Press)-</option>");
-				$.each(tobArr.results, function(index, value) {
-					monsterSelect.append("<option value='" + value.slug + "'>" + value.name + "</option>");
-				})
-			})
-			.fail(function() {
-				$("#monster-select-form").html("Unable to load Tome of Beasts monster presets.")
-			});
+			// $.getJSON("https://api.open5e.com/monsters/?format=json&fields=slug,name&limit=1000&document__slug=tob", function(tobArr) {
+			// 	monsterSelect.append("<option value=''></option>");
+			// 	monsterSelect.append("<option value=''>-Tome of Beasts (Kobold Press)-</option>");
+			// 	$.each(tobArr.results, function(index, value) {
+			// 		monsterSelect.append("<option value='" + value.slug + "'>" + value.name + "</option>");
+			// 	})
+			// })
+			// .fail(function() {
+			// 	$("#monster-select-form").html("Unable to load Tome of Beasts monster presets.")
+			// });
         })
         .fail(function() {
             $("#monster-select-form").html("Unable to load monster presets.")

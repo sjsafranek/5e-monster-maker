@@ -52,7 +52,7 @@
                     <button class="btn btn-sm btn-success" onclick="TrySaveFile()">Save Statblock</button>
                     <button class="btn btn-sm btn-success" onclick="LoadFilePrompt()">Load Statblock</button>
                     <button class="btn btn-sm btn-success" onclick="TryPrint()">Printable Block</button>
-                    <button class="btn btn-sm btn-success" onclick="TryImage()">View Image</button>
+                    <!-- <button class="btn btn-sm btn-success" onclick="TryImage()">View Image</button> -->
                     <button class="btn btn-sm btn-success" onclick="TryMarkdown()">View Markdown</button>
                     <input id="file-upload" type="file" onChange="TryLoadFile();" hidden />
                 </div>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <!-- The Actual Stat Block -->
+
             <div class="row mt-4">
                 <div class="col-12">
 
@@ -76,18 +76,18 @@
                             <label for="1col-input"><input id="1col-input" type="radio" name="columns-input" value="1col" checked> One Column</label>
                             <label for="2col-input" style="margin-left: .5rem;"><input id="2col-input" type="radio" name="columns-input" value="2col"> Two Columns</label>
                         </form>
-                        <button id="left-separator-button" type="button" onclick="UpdateBlockFromVariables(1)">&lt;&lt;</button>
-                        <button id="right-separator-button" type="button" onclick="UpdateBlockFromVariables(-1)">>></button>
+                        <!-- <button id="left-separator-button" type="button" onclick="UpdateBlockFromVariables(1)">&lt;&lt;</button> -->
+                        <!-- <button id="right-separator-button" type="button" onclick="UpdateBlockFromVariables(-1)">>></button> -->
                     </div>
 
-                    <div id="stat-block-wrapper">
+                    <div id="stat-block-wrapper" style="display:none;">
                         <div id="stat-block" class="stat-block">
                             <hr class="orange-border" />
                             <div class="section-left">
                                 <div class="creature-heading">
                                     <h1 id="monster-name">Monster</h1>
                                     <h2 id="monster-type">Size, type, alignment</h2>
-                                </div> <!-- creature heading -->
+                                </div>
                                 <svg height="5" width="100%" class="tapered-rule">
                                     <polyline points="0,0 400,2.5 0,5"></polyline>
                                 </svg>
@@ -95,15 +95,15 @@
                                     <div class="property-line first">
                                         <h4>Armor Class</h4>
                                         <p id="armor-class"></p>
-                                    </div> <!-- property line -->
+                                    </div>
                                     <div class="property-line">
                                         <h4>Hit Points</h4>
                                         <p id="hit-points"></p>
-                                    </div> <!-- property line -->
+                                    </div>
                                     <div class="property-line last">
                                         <h4>Speed</h4>
                                         <p id="speed"></p>
-                                    </div> <!-- property line -->
+                                    </div>
                                     <svg height="5" width="100%" class="tapered-rule">
                                         <polyline points="0,0 400,2.5 0,5"></polyline>
                                     </svg>
@@ -111,28 +111,28 @@
                                         <div class="scores-strength">
                                             <h4>STR</h4>
                                             <p id="strpts"></p>
-                                        </div> <!-- scores strength -->
+                                        </div>
                                         <div class="scores-dexterity">
                                             <h4>DEX</h4>
                                             <p id="dexpts"></p>
-                                        </div> <!-- scores dexterity -->
+                                        </div>
                                         <div class="scores-constitution">
                                             <h4>CON</h4>
                                             <p id="conpts"></p>
-                                        </div> <!-- scores constitution -->
+                                        </div>
                                         <div class="scores-intelligence">
                                             <h4>INT</h4>
                                             <p id="intpts"></p>
-                                        </div> <!-- scores intelligence -->
+                                        </div>
                                         <div class="scores-wisdom">
                                             <h4>WIS</h4>
                                             <p id="wispts"></p>
-                                        </div> <!-- scores wisdom -->
+                                        </div>
                                         <div class="scores-charisma">
                                             <h4>CHA</h4>
                                             <p id="chapts"></p>
-                                        </div> <!-- scores charisma -->
-                                    </div> <!-- scores -->
+                                        </div>
+                                    </div>
                                     <svg height="5" width="100%" class="tapered-rule">
                                         <polyline points="0,0 400,2.5 0,5"></polyline>
                                     </svg>
@@ -140,28 +140,28 @@
                                     <div class="property-line last">
                                         <h4>Challenge</h4>
                                         <p id="challenge-rating"></p>
-                                    </div> <!-- property line -->
-                                </div> <!-- top stats -->
+                                    </div>
+                                </div>
                                 <svg height="5" width="100%" class="tapered-rule">
                                     <polyline points="0,0 400,2.5 0,5"></polyline>
                                 </svg>
                                 <div class="actions">
                                     <div id="traits-list-left"></div>
-                                </div> <!-- actions -->
-                            </div> <!-- section left -->
+                                </div>
+                            </div>
                             <div class="section-right">
                                 <div class="actions">
                                     <div id="traits-list-right"></div>
-                                </div> <!-- actions -->
-                            </div> <!-- section right -->
+                                </div>
+                            </div>
                             <hr class="orange-border bottom" />
                         </div>
                     </div>
 
                 </div>
-            </div> <!-- stat block -->
+            </div>
 
-            <div class="row mt-4 monster-options">
+            <div class="row monster-options">
                 <div class="col-12">
                     <div class="row">
                         <div class="col-7">
@@ -216,6 +216,7 @@
                                                 <option value="ooze">Ooze</option>
                                                 <option value="plant">Plant</option>
                                                 <option value="undead">Undead</option>
+                                                <option value="swarm of tiny beasts">Swarm of tiny beasts</option>
                                                 <option value="*">Other</option>
                                             </select>
                                         </div>
@@ -226,22 +227,28 @@
                                                 <span for="alignment-input" class="input-group-text attribute-label">Alignment</span>
                                             </div>
                                             <select id="alignment-input" class="form-control form-control-sm">
-                                                <option value="any alignment" selected>Any</option>
+                                                <option value="any" selected>Any</option>
                                                 <option value="any good" select>Any Good</option>
                                                 <option value="lawful good">Lawful Good</option>
-                                                <option value="good">Good</option>
+                                                <option value="neutral good">Good</option>
                                                 <option value="chaotic good">Chaotic Good</option>
-                                                <option value="any neutral" selected>Any Neutral</option>
+                                                <option value="any neutral">Any Neutral</option>
                                                 <option value="lawful neutral">Lawful Neutral</option>
+                                                <option value="true neutral">Neutral</option>
                                                 <option value="neutral">Neutral</option>
                                                 <option value="chaotic neutral">Chaotic Neutral</option>
-                                                <option value="any evil" selected>Any Evil</option>
+                                                <option value="any evil">Any Evil</option>
                                                 <option value="lawful evil">Lawful Evil</option>
-                                                <option value="evil">Evil</option>
+                                                <option value="neutral evil">Evil</option>
                                                 <option value="chaotic evil">Chaotic Evil</option>
-                                                <option value="any lawful" selected>Any Lawful</option>
-                                                <option value="any chaotic" selected>Any Chaotic</option>
-                                                <option value="unaligned" selected>Unaligned</option>
+                                                <option value="any lawful">Any Lawful</option>
+                                                <option value="any chaotic">Any Chaotic</option>
+                                                <option value="any non-lawful">Any Non-Lawful</option>
+                                                <option value="any non-good">Any Non-Good</option>
+                                                <option value="neutral good (50%) or neutral evil (50%)">neutral good (50%) or neutral evil (50%)</option>
+                                                <option value="neutral evil (50%) lawful evil (50%)">neutral evil (50%) lawful evil (50%)</option>                                                
+                                                <option value="chaotic neutral or chaotic evil">chaotic neutral or chaotic evil</option>
+                                                <option value="unaligned">Unaligned</option>
                                             </select>
                                         </div>
                                     </div>
@@ -868,7 +875,7 @@
 
             </div>
         </div>
-        <div class="footer"><a href="https://github.com/Tetra-cube/Tetra-cube.github.io">GitHub Repo</a></div>
+        <!-- <div class="footer"><a href="https://github.com/Tetra-cube/Tetra-cube.github.io">GitHub Repo</a></div> -->
     </div>
 
     <script>
@@ -932,6 +939,57 @@
         	reader.readAsText(file);
         });
 
+
+
+
+
+
+        // $('.property-line.languages').on('click', function(e) {
+        //     Swal.fire({
+        //         title: 'Select languages(s)',
+        //         input: 'select',
+        //         inputOptions: {
+        //             "All": "All",
+        //             "Abyssal": "Abyssal",
+        //             "Aquan": "Aquan",
+        //             "Auran": "Auran",
+        //             "Celestial": "Celestial",
+        //             "Common": "Common",
+        //             "Deep Speech": "Deep Speech",
+        //             "Draconic": "Draconic",
+        //             "Dwarvish": "Dwarvish",
+        //             "Elvish": "Elvish",
+        //             "Giant": "Giant",
+        //             "Gnomish": "Gnomish",
+        //             "Goblin": "Goblin",
+        //             "Halfling": "Halfling",
+        //             "Ignan": "Ignan",
+        //             "Infernal": "Infernal",
+        //             "Orc": "Orc",
+        //             "Primordial": "Primordial",
+        //             "Sylvan": "Sylvan",
+        //             "Terran": "Terran",
+        //             "Undercommon": "Undercommon"
+        //         },
+        //         inputAttributes: {
+        //             multiple: true
+        //         },
+        //         inputPlaceholder: 'Select languages(s)',
+        //         showCancelButton: true,
+        //         preConfirm: (value) => {
+        //             return $(Swal.getInput()).val();
+        //         }
+        //     }).then(function(result) {
+        //         if (result.value) {
+        //             for (var i=0; i<result.value.length; i++) {
+        //                 var language = result.value[i];
+        //                 GetVariablesFunctions.AddLanguage(language);
+        //             }
+        //             FormFunctions.MakeDisplayList("languages", false);
+        //             UpdateBlockFromVariables();
+        //         }
+        //     });
+        // });
 
 
     </script>
