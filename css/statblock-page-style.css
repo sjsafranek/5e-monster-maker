@@ -13,11 +13,21 @@
     cursor: pointer;
 }
 
-.statblock-image {
+/*.statblock-image {
     width: 12px;
     height: 12px;
     cursor: pointer;
+}*/
+
+
+.danger:hover {
+    color: red;
 }
+
+.action:hover {
+    cursor: pointer;
+}
+
 
 .statblock-list {
     text-align: left;
